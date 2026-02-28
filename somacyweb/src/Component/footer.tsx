@@ -1,11 +1,11 @@
 import React from 'react';
-import { ShieldCheck, Radar, Share2, Play, Facebook, Youtube, Instagram, Twitter, Apple } from 'lucide-react';
+import { ShieldCheck, Radar, Share2, Play, Facebook, Youtube, Instagram, Twitter, Apple, Mail, Phone } from 'lucide-react';
 
 const Footer = () => {
   return (
     <footer className="bg-white pt-12 pb-6 border-t border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8 pb-8 border-b border-gray-100">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4 lg:gap-4 pb-8 border-b border-gray-100">
           <div className="flex flex-col space-y-6">
             <div className="flex items-center space-x-3">
               <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center">
@@ -23,6 +23,20 @@ const Footer = () => {
               </div>
               <div className="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center border border-gray-100 cursor-pointer hover:bg-gray-100 transition-colors">
                 <Share2 size={18} className="text-gray-400" />
+              </div>
+            </div>
+            <div className="flex flex-col space-y-3">
+              <div className="flex items-center space-x-3 group cursor-pointer">
+                <div className="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center border border-gray-100 group-hover:bg-gray-100 transition-colors shrink-0">
+                  <Mail size={18} className="text-gray-400" />
+                </div>
+                <p className="text-[13px] font-medium text-gray-600 hover:text-blue-600 transition-colors">contact@somacy.com</p>
+              </div>
+              <div className="flex items-center space-x-3 group cursor-pointer">
+                <div className="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center border border-gray-100 group-hover:bg-gray-100 transition-colors shrink-0">
+                  <Phone size={18} className="text-gray-400" />
+                </div>
+                <p className="text-[13px] font-medium text-gray-600 hover:text-blue-600 transition-colors">+91 1234567890</p>
               </div>
             </div>
           </div>
@@ -44,6 +58,15 @@ const Footer = () => {
               <li><a href="#" className="text-[13px] font-medium text-gray-600 hover:text-blue-600 transition-colors">View Wallet Balance</a></li>
               <li><a href="#" className="text-[13px] font-medium text-gray-600 hover:text-blue-600 transition-colors">Approved Hospital List</a></li>
               <li><a href="#" className="text-[13px] font-medium text-gray-600 hover:text-blue-600 transition-colors">Help & Support</a></li>
+
+            </ul>
+          </div>
+          <div className="flex flex-col space-y-3 mt-2">
+            <h3 className="text-sm font-bold text-gray-900">Our Company </h3>
+            <ul className="space-y-2">
+              <li><a href="#" className="text-[13px] font-medium text-gray-600 hover:text-blue-600 transition-colors">About us</a></li>
+              <li><a href="#" className="text-[13px] font-medium text-gray-600 hover:text-blue-600 transition-colors">Contact us</a></li>
+              <li><a href="#" className="text-[13px] font-medium text-gray-600 hover:text-blue-600 transition-colors">Blog</a></li>
             </ul>
           </div>
           {/* Policies */}
@@ -53,6 +76,7 @@ const Footer = () => {
               <li><a href="#" className="text-[13px] font-medium text-gray-600 hover:text-blue-600 transition-colors">Privacy Policy</a></li>
               <li><a href="#" className="text-[13px] font-medium text-gray-600 hover:text-blue-600 transition-colors">Terms of Service</a></li>
               <li><a href="#" className="text-[13px] font-medium text-gray-600 hover:text-blue-600 transition-colors">License Agreement</a></li>
+              <li><a href="#" className="text-[13px] font-medium text-gray-600 hover:text-blue-600 transition-colors">FAQ</a></li>
             </ul>
           </div>
 

@@ -1,6 +1,8 @@
 import { ShoppingCart, Shield, Search } from "lucide-react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import logo from "../Assets/logo.png"
+
 
 const Header = () => {
   const [mode, setMode] = useState("RGHS");
@@ -39,20 +41,24 @@ const Header = () => {
   return (
     <header className="w-full bg-[#f5f7fa] border-b border-gray-200 px-8 py-3 flex items-center">
       {/* Logo */}
+      
+  <div className="flex items-center gap-3">
+    <img 
+  src={logo} 
+  alt="Somacy Logo" 
+  className="w-9 h-9 object-contain"
+/>
+    <div className="leading-tight">
+      <h1 className="text-base font-semibold text-blue-600">Somacy</h1>
+      <p className="text-[10px] text-gray-400 tracking-wider">
+        PREMIUM CARE
+      </p>
+    </div>
+  </div>
       <div
         className="flex items-center gap-3 cursor-pointer"
         onClick={() => handleClick("Medicines")}
       >
-        <div className="w-9 h-9 bg-blue-600 rounded-lg flex items-center justify-center">
-          <Shield className="text-white w-4 h-4" />
-        </div>
-
-        <div className="leading-tight">
-          <h1 className="text-base font-semibold text-blue-600">Somacy</h1>
-          <p className="text-[10px] text-gray-400 tracking-wider">
-            PREMIUM CARE
-          </p>
-        </div>
       </div>
 
       {/* Search */}

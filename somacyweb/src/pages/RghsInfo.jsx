@@ -129,9 +129,9 @@ function RghsInfo() {
                             Add to Cart
                         </button>
 
-                        <button className='mt-3 w-full bg-green-500 text-white font-medium py-2 rounded-lg hover:bg-green-600 transition flex items-center justify-center gap-2'>
+                        {/* <button className='mt-3 w-full bg-green-500 text-white font-medium py-2 rounded-lg hover:bg-green-600 transition flex items-center justify-center gap-2'>
                             🛒 Add to RGHS Cart
-                        </button>
+                        </button> */}
 
                         <button className='mt-3 w-full text-gray-400 text-sm hover:text-gray-600 transition font-medium'>
                             View Details
@@ -162,9 +162,9 @@ function RghsInfo() {
                             Add to Cart
                         </button>
 
-                        <button disabled className='mt-3 w-full bg-white border border-gray-100 text-gray-300 font-medium py-2 rounded-lg cursor-not-allowed'>
+                        {/* <button disabled className='mt-3 w-full bg-white border border-gray-100 text-gray-300 font-medium py-2 rounded-lg cursor-not-allowed'>
                             Not RGHS Eligible
-                        </button>
+                        </button> */}
 
                         <button className='mt-3 w-full text-gray-400 text-sm hover:text-gray-600 transition font-medium'>
                             View Details
@@ -196,9 +196,9 @@ function RghsInfo() {
                             Add to Cart
                         </button>
 
-                        <button className='mt-3 w-full bg-green-500 text-white font-medium py-2 rounded-lg hover:bg-green-600 transition flex items-center justify-center gap-2'>
+                        {/* <button className='mt-3 w-full bg-green-500 text-white font-medium py-2 rounded-lg hover:bg-green-600 transition flex items-center justify-center gap-2'>
                             🛒 Add to RGHS Cart
-                        </button>
+                        </button> */}
 
                         <button className='mt-3 w-full text-gray-400 text-sm hover:text-gray-600 transition font-medium'>
                             View Details

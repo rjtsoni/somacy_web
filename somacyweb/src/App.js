@@ -7,6 +7,7 @@ import Homepage from "./pages/homepage";
 import CartPage from "./pages/Cart";
 import { Route, Routes } from "react-router-dom";
 import MyOrder from "./pages/MyOrder";
+import MedicineComparison from "./pages/MedicineComaprison";
 
 function App() {
   return (
@@ -19,6 +20,8 @@ function App() {
           <Route path="/cart" element={<CartPage />} />
           <Route path="/myorder" element={<MyOrder />} />
           <Route path="/lab-test" element={<RghsInfo />} />
+                    <Route path="/medicine-search" element={<MedicineComparison />} />
+
         </Routes>
       </main>
       <Footer />

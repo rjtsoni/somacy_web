@@ -1,17 +1,18 @@
-import logo from "./logo.svg";
 import "./App.css";
-import LabReports from "./pages/LabReports";
+
 import Footer from "./Component/Footer";
 import Header from "./Component/Header";
 import RghsInfo from "./pages/RghsInfo";
+import Homepage from "./pages/homepage";
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <RghsInfo/>
-    {/* <LabReports /> */}
-    <Footer />
+      <RghsInfo />
+      {/* <LabReports /> */}
+      <Homepage />
+      <Footer />
     </div>
   );
 }

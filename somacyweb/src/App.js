@@ -13,6 +13,8 @@ import LabTestPage from "./pages/LabTestPage";
 import SlotBooking from "./pages/SlotBooking";
 import UploadRghs from "./pages/UploadRghs";
 import PReview from "./pages/PReview";
+import ProductCart from "./pages/ProductCart";
+
 function App() {
   return (
     // <div className="min-h-screen flex flex-col">
@@ -31,6 +33,8 @@ function App() {
           <Route path="/lab-test/:category" element={<LabTestPage />} />
           <Route path="/lab-test/:category/slot" element={<SlotBooking />} />
           <Route path="/PReview" element={<PReview />} />
+          <Route path="/productcart" element={<ProductCart />} />
+
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>

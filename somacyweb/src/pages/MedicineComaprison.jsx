@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 const FilterSidebar = ({ price, setPrice }) => (
   <aside className="w-full lg:w-64 flex-shrink-0">
-    <div className="bg-white rounded-xl p-6 border border-[#e7ebf3] sticky top-24">
+    <div className="bg-white rounded-xl p-6 border border-[#e7ebf3] top-24">
       <div className="flex items-center justify-between mb-6">
         <h3 className="font-bold text-lg">Filters</h3>
       </div>

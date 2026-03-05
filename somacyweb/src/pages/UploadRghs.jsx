@@ -10,6 +10,7 @@ const UploadRghs = () => {
                         <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-blue-600 text-white flex items-center justify-center text-[10px] sm:text-xs">1</div>
                         <span>Upload</span>
                     </div>
+
                     <div className="w-4 sm:w-12 h-px bg-gray-200"></div>
                     <div className="flex items-center gap-1.5 sm:gap-2">
                         <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full border-2 border-gray-200 flex items-center justify-center text-[10px] sm:text-xs">2</div>

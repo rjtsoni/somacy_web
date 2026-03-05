@@ -14,6 +14,11 @@ import SlotBooking from "./pages/SlotBooking";
 import UploadRghs from "./pages/UploadRghs";
 import PReview from "./pages/PReview";
 import ProductCart from "./pages/ProductCart";
+import BookingConfirmed from "./pages/BookingConfirmed";
+import CheckoutPage from "./pages/CheckoutPage";
+import OrderSuccess from "./pages/OrderSuccess";
+import OrderConfirmed from "./pages/OrderConfirmed";
+import TrackOrder from "./pages/TrackOrder";
 
 function App() {
   return (
@@ -33,7 +38,19 @@ function App() {
           <Route path="/lab-test/:category" element={<LabTestPage />} />
           <Route path="/lab-test/:category/slot" element={<SlotBooking />} />
           <Route path="/PReview" element={<PReview />} />
-          <Route path="/productcart" element={<ProductCart />} />
+          <Route path="/drugs/:medicineName" element={<ProductCart />} />
+          <Route
+            path="/lab-test/:category/confirmed"
+            element={<BookingConfirmed />}
+          />
+          <Route path="/Prescription-Review" element={<PReview />} />
+          <Route path="/checkout" element={<CheckoutPage />} />
+          {/* <Route path="/order-success/:orderId" element={<OrderSuccess />} /> */}
+          {/* <Route path="/order-success" element={<OrderSuccess />} /> */}
+          {/* <Route path="/order-confirmed/:orderId" element={<OrderConfirmed />} /> */}
+          <Route path="/order-confirmed" element={<OrderConfirmed />} />
+          {/* <Route path="/track-order/:orderId" element={<TrackOrder />} /> */}
+          <Route path="/track-order" element={<TrackOrder />} />
 
           <Route path="*" element={<NotFound />} />
         </Routes>

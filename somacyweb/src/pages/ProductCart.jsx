@@ -1,97 +1,102 @@
-import { Pill, Truck } from "lucide-react"
+import { Pill, Truck } from "lucide-react";
+import { useNavigate, useParams } from "react-router-dom";
 
-const ProductCard = () => (
-  <div className="bg-white border border-gray-200 rounded-xl p-6 flex gap-6 mt-5">
-    <div className="w-40 h-40 bg-gray-100 rounded-lg flex items-center justify-center">
-      <Pill size={60} className="text-gray-400" />
-    </div>
+const ProductCard = ({ medicineName }) => {
+  return (
+    <div className="bg-white border border-gray-200 rounded-xl p-6 flex gap-6 mt-5">
+      <div className="w-40 h-40 bg-gray-100 rounded-lg flex items-center justify-center">
+        <Pill size={60} className="text-gray-400" />
+      </div>
 
-    <div className="flex-1">
-      <h1 className="text-2xl font-bold">Metformin 500mg Tablet</h1>
-      <p className="text-gray-500 text-sm mb-4">Strip of 15 tablets</p>
+      <div className="flex-1">
+        <h1 className="text-2xl font-bold">{medicineName}</h1>
+        <p className="text-gray-500 text-sm mb-4">Strip of 15 tablets</p>
 
-      <div className="space-y-2 text-sm">
-        <p>
-          <span className="font-semibold text-gray-600">Salt:</span>{" "}
-          <span className="text-blue-600">Metformin Hydrochloride (500mg)</span>
-        </p>
+        <div className="space-y-2 text-sm">
+          <p>
+            <span className="font-semibold text-gray-600">Salt:</span>{" "}
+            <span className="text-blue-600">
+              Metformin Hydrochloride (500mg)
+            </span>
+          </p>
 
-        <p>
-          <span className="font-semibold text-gray-600">Manufacturer:</span>{" "}
-          Abbott Healthcare Ltd
-        </p>
+          <p>
+            <span className="font-semibold text-gray-600">Manufacturer:</span>{" "}
+            Abbott Healthcare Ltd
+          </p>
 
-        <p>
-          <span className="font-semibold text-gray-600">Packing:</span>{" "}
-          Alu-Alu Blister Strip
-        </p>
+          <p>
+            <span className="font-semibold text-gray-600">Packing:</span>{" "}
+            Alu-Alu Blister Strip
+          </p>
+        </div>
       </div>
     </div>
-  </div>
-)
+  );
+};
 
-const PriceCard = () => (
-  <div className="bg-white border border-gray-200 rounded-xl overflow-hidden mt-5 ">
+const PriceCard = () => {
+  const navigate = useNavigate();
 
-    <div className="flex items-center justify-between p-6">
-      <h3 className="font-semibold text-lg">Pricing & Availability</h3>
+  return (
+    <div className="bg-white border border-gray-200 rounded-xl overflow-hidden mt-5 ">
+      <div className="flex items-center justify-between p-6">
+        <h3 className="font-semibold text-lg">Pricing & Availability</h3>
 
-      <span className="flex items-center gap-1 text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">
-        IN STOCK
-      </span>
-    </div>
+        <span className="flex items-center gap-1 text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">
+          IN STOCK
+        </span>
+      </div>
 
-    <div className="border-t border-gray-200 p-6 space-y-4">
+      <div className="border-t border-gray-200 p-6 space-y-4">
+        <div className="flex items-end justify-between">
+          <div>
+            <p className="text-xs text-gray-500">RETAIL PRICE</p>
+            <p className="text-xs text-gray-400">Regular retail purchase</p>
+          </div>
 
-      <div className="flex items-end justify-between">
+          <div className="text-right">
+            <p className="text-xs text-gray-400 line-through">MRP ₹150.00</p>
 
-        <div>
-          <p className="text-xs text-gray-500">RETAIL PRICE</p>
-          <p className="text-xs text-gray-400">Regular retail purchase</p>
-        </div>
+            <div className="flex items-center gap-2 justify-end">
+              <span className="text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded">
+                17% OFF
+              </span>
 
-        <div className="text-right">
-          <p className="text-xs text-gray-400 line-through">MRP ₹150.00</p>
-
-          <div className="flex items-center gap-2 justify-end">
-            <span className="text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded">
-              17% OFF
-            </span>
-
-            <span className="text-2xl font-bold">₹125.00</span>
+              <span className="text-2xl font-bold">₹125.00</span>
+            </div>
           </div>
         </div>
 
+        <button
+          onClick={() => navigate("/cart")}
+          className="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-lg font-medium"
+        >
+          Add to Cart
+        </button>
       </div>
 
-      <button className="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-lg font-medium">
-        Add to Cart
-      </button>
-
+      <div className="border-t border-gray-200 p-5 flex gap-3 items-start text-sm text-gray-600">
+        <Truck size={20} className="text-blue-500" />
+        <p>
+          Free delivery by{" "}
+          <span className="font-medium">Tomorrow, 12:00 PM</span>
+          <br />
+          Available at 12 partner pharmacies near you
+        </p>
+      </div>
     </div>
-
-    <div className="border-t border-gray-200 p-5 flex gap-3 items-start text-sm text-gray-600">
-      <Truck size={20} className="text-blue-500" />
-      <p>
-        Free delivery by <span className="font-medium">Tomorrow, 12:00 PM</span>
-        <br />
-        Available at 12 partner pharmacies near you
-      </p>
-
-    </div>
-
-  </div>
-)
+  );
+};
 
 const adviceData = [
   "Take this medicine with food to reduce the chance of an upset stomach.",
   "Monitor your blood sugar levels regularly as advised by your doctor.",
-  "Lifestyle changes like low-fat diet and exercise help this medicine work better."
-]
+  "Lifestyle changes like low-fat diet and exercise help this medicine work better.",
+];
 
 const ExpertAdviceCard = () => (
   <div className="bg-white border border-gray-200 rounded-xl p-6 space-y-4">
-
     <div className="flex items-center gap-2 font-semibold text-gray-800">
       Expert Advice
     </div>
@@ -99,33 +104,50 @@ const ExpertAdviceCard = () => (
     <div className="space-y-4">
       {adviceData.map((item, index) => (
         <div key={index} className="flex gap-3 items-start">
-
           <div className="w-6 h-6 flex items-center justify-center rounded-full bg-blue-100 text-blue-600 text-xs font-semibold">
             {index + 1}
           </div>
 
           <p className="text-sm text-gray-600">{item}</p>
-
         </div>
       ))}
     </div>
-
   </div>
-)
+);
 
 const InfoCard = ({ title, text }) => (
   <div className="bg-white border border-gray-200 rounded-xl p-6">
     <h3 className="font-bold mb-2">{title}</h3>
     <p className="text-sm text-gray-600">{text}</p>
   </div>
-)
+);
 
 const safetyData = [
-  { title: "Alcohol", status: "Unsafe", color: "text-red-500", description: "Increases risk of lactic acidosis" },
-  { title: "Pregnancy", status: "Safe if prescribed", color: "text-green-600", description: "Safe if prescribed by the doctor" },
-  { title: "Driving", status: "Safe", color: "text-green-600", description: "Doesn't affect driving ability" },
-  { title: "Kidney", status: "Consult doctor", color: "text-yellow-600", description: "Adjustment needed for kidney patients" }
-]
+  {
+    title: "Alcohol",
+    status: "Unsafe",
+    color: "text-red-500",
+    description: "Increases risk of lactic acidosis",
+  },
+  {
+    title: "Pregnancy",
+    status: "Safe if prescribed",
+    color: "text-green-600",
+    description: "Safe if prescribed by the doctor",
+  },
+  {
+    title: "Driving",
+    status: "Safe",
+    color: "text-green-600",
+    description: "Doesn't affect driving ability",
+  },
+  {
+    title: "Kidney",
+    status: "Consult doctor",
+    color: "text-yellow-600",
+    description: "Adjustment needed for kidney patients",
+  },
+];
 
 const SafetyAdviceCard = () => (
   <div className="bg-white border border-gray-200 rounded-xl p-6">
@@ -141,55 +163,89 @@ const SafetyAdviceCard = () => (
       ))}
     </div>
   </div>
-)
+);
 
 const genericData = [
-  { name: "Glycomet 500mg Tablet", price: "72.00", company: "USV PRIVATE LTD", save: "10% OFF", mrp: "100.00" },
-  { name: "Exermet 500mg Tablet", price: "60.00", company: "CIPLA LTD", save: "15% OFF", mrp: "90.00" },
-  { name: "Metsmall 500mg Tablet", price: "80.50", company: "DR REDDY'S LABS", save: "20% OFF", mrp: "115.00" },
-  { name: "Obimet 500mg Tablet", price: "75.00", company: "ABBOT INDIA", save: "25% OFF", mrp: "125.00" }
-]
+  {
+    name: "Glycomet 500mg Tablet",
+    price: "72.00",
+    company: "USV PRIVATE LTD",
+    save: "10% OFF",
+    mrp: "100.00",
+  },
+  {
+    name: "Exermet 500mg Tablet",
+    price: "60.00",
+    company: "CIPLA LTD",
+    save: "15% OFF",
+    mrp: "90.00",
+  },
+  {
+    name: "Metsmall 500mg Tablet",
+    price: "80.50",
+    company: "DR REDDY'S LABS",
+    save: "20% OFF",
+    mrp: "115.00",
+  },
+  {
+    name: "Obimet 500mg Tablet",
+    price: "75.00",
+    company: "ABBOT INDIA",
+    save: "25% OFF",
+    mrp: "125.00",
+  },
+];
 
-const GenericCard = ({ name, price, company, save, mrp }) => (
-  <div className="bg-white border border-gray-200 rounded-2xl p-5 mb-5 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+const GenericCard = ({ name, price, company, save, mrp }) => {
+  const navigate = useNavigate();
+  const handleMedicineClick = (name) => {
+    const slug = name
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/(^-|-$)/g, "");
 
-    <div className="flex items-start justify-between">
-      <span className="text-xs bg-green-100 text-green-700 font-semibold px-2.5 py-1 rounded-md">{save}</span>
-    </div>
+    navigate(`/drugs/${slug}`);
+  };
 
-    <div className="mt-4">
-      <h4 className="font-bold text-base">{name}</h4>
-      <p className="text-xs text-green-600 font-medium mt-1">{company}</p>
-    </div>
-
-    <div className="flex items-end justify-between mt-5">
-      <div>
-        <p className="text-xs text-gray-400 line-through">MRP ₹{mrp}</p>
-        <p className="text-xl font-bold">₹{price}</p>
+  return (
+    <div className="bg-white border border-gray-200 rounded-2xl p-5 mb-5 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+      <div className="flex items-start justify-between">
+        <span className="text-xs bg-green-100 text-green-700 font-semibold px-2.5 py-1 rounded-md">
+          {save}
+        </span>
       </div>
-      <button className="border border-blue-500 text-blue-600 font-semibold text-xs px-5 py-2 rounded-lg hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-colors">
-        ADD
-      </button>
-    </div>
 
-  </div>
-)
+      <div className="mt-4" onClick={() => handleMedicineClick(name)}>
+        <h4 className="font-bold text-base">{name}</h4>
+        <p className="text-xs text-green-600 font-medium mt-1">{company}</p>
+      </div>
+
+      <div className="flex items-end justify-between mt-5">
+        <div>
+          <p className="text-xs text-gray-400 line-through">MRP ₹{mrp}</p>
+          <p className="text-xl font-bold">₹{price}</p>
+        </div>
+        <button className="border border-blue-500 text-blue-600 font-semibold text-xs px-5 py-2 rounded-lg hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-colors">
+          ADD
+        </button>
+      </div>
+    </div>
+  );
+};
 
 const ProductCart = () => {
+  const { medicineName } = useParams();
+
   return (
     <div className="bg-gray-50 min-h-screen">
       <div className="w-full max-w-[1600px] mx-auto px-8">
-
         <div className="grid lg:grid-cols-3 gap-6">
-
           <div className="lg:col-span-2 space-y-6">
-
-            <ProductCard />
+            <ProductCard medicineName={medicineName} />
 
             <InfoCard
               title="What it is used for ?"
               text="Metformin 500mg belongs to a class of medicines called biguanides. It is the firts-line treatment for adults with type-2 diabetes mellitus. It helps control blood sugar levels, reducing the risk of serious complications like kidney damage, blindness, nerve problems, and toss of limbs. Proper control of diabetes also reduces the risk of heart attck or stroke."
-
             />
 
             <InfoCard
@@ -198,14 +254,12 @@ const ProductCart = () => {
             />
 
             <SafetyAdviceCard />
-
           </div>
 
           <div className="space-y-6">
             <PriceCard />
             <ExpertAdviceCard />
           </div>
-
         </div>
 
         <div className="mt-10">
@@ -224,10 +278,9 @@ const ProductCart = () => {
             ))}
           </div>
         </div>
-
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ProductCart
+export default ProductCart;

@@ -1,7 +1,7 @@
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 export default function SlotBooking() {
   const { category } = useParams();
@@ -18,7 +18,8 @@ export default function SlotBooking() {
   ];
 
   const eveningSlots = ["05:00 - 06:00 PM", "06:00 - 07:00 PM"];
-  const currentStep = 2; // change dynamically
+  const currentStep = 2;
+  const navigate = useNavigate();
 
   return (
     <div className="bg-gray-50 min-h-screen py-10">
@@ -161,7 +162,12 @@ export default function SlotBooking() {
                 </button>
               </div>
 
-              <label className="flex items-start gap-3 border-2 border-blue-600 rounded-xl p-4 mb-3 cursor-pointer">
+              {/* HOME */}
+
+              <label
+                className={`flex items-start gap-3 rounded-xl p-4 mb-3 cursor-pointer border-2 
+    ${address === "home" ? "border-blue-600 bg-blue-50" : "border-gray-200"}`}
+              >
                 <input
                   type="radio"
                   name="address"
@@ -179,7 +185,12 @@ export default function SlotBooking() {
                 </div>
               </label>
 
-              <label className="flex items-start gap-3 border rounded-xl p-4 cursor-pointer">
+              {/* OFFICE */}
+
+              <label
+                className={`flex items-start gap-3 rounded-xl p-4 cursor-pointer border-2 
+    ${address === "office" ? "border-blue-600 bg-blue-50" : "border-gray-200"}`}
+              >
                 <input
                   type="radio"
                   name="address"
@@ -295,7 +306,10 @@ export default function SlotBooking() {
         <div className="flex justify-between mt-10">
           <button className="text-gray-500">← Back to Details</button>
 
-          <button className="bg-blue-600 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-700">
+          <button
+            onClick={() => navigate(`/lab-test/${category}/confirmed`)}
+            className="bg-blue-600 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-700"
+          >
             Proceed to Payment →
           </button>
         </div>

@@ -10,6 +10,8 @@ import {
   WineOff,
 } from "lucide-react";
 import { Activity } from "react";
+import HelpDest from "../Component/HelpDesk";
+import HelpDesk from "../Component/HelpDesk";
 
 export default function LabTestPage() {
   const { category } = useParams();
@@ -17,7 +19,6 @@ export default function LabTestPage() {
 
   return (
     <div className="bg-gray-50 min-h-screen">
-      {/* Container */}
       <div className="max-w-7xl mx-auto px-6 py-8">
         {/* Breadcrumb */}
         <div className="text-sm text-gray-500 mb-6">
@@ -92,7 +93,6 @@ export default function LabTestPage() {
               </div>
             </div>
 
-            {/* Included Parameters */}
             <div className="mt-8">
               <div className="flex justify-between items-center mb-4">
                 <h3 className="text-lg font-semibold">
@@ -105,7 +105,6 @@ export default function LabTestPage() {
                 </div>
               </div>
 
-              {/* Parameter Card */}
               <div className="bg-white p-5 rounded-xl shadow-sm mb-4">
                 <div className="flex justify-between mb-3">
                   <h4 className="font-semibold">Kidney Function Test (KFT)</h4>
@@ -134,7 +133,6 @@ export default function LabTestPage() {
 
           {/* RIGHT SECTION */}
           <div className="space-y-6">
-            {/* Lab Partner */}
             <div className="bg-white rounded-xl p-6 shadow-sm">
               <h4 className="font-semibold mb-4">LAB PARTNER</h4>
 
@@ -166,26 +164,16 @@ export default function LabTestPage() {
             </div>
 
             {/* Help Card */}
-            <div className="bg-slate-900 text-white rounded-xl p-6 text-center">
-              <h4 className="font-semibold mb-2">Need Help Booking?</h4>
-
-              <p className="text-sm opacity-80">Call our experts</p>
-
-              <button className="mt-4 bg-white text-black px-4 py-2 rounded-lg">
-                +91 1800-SOMACY
-              </button>
-            </div>
+            <HelpDesk />
           </div>
         </div>
       </div>
-      {/* Why Choose Somacy Labs */}
       <div className="mt-10">
         <h2 className="text-lg font-semibold text-gray-800 mb-6">
           Why Choose Somacy Labs?
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {/* Card 1 */}
           <div className="bg-white rounded-xl p-6 shadow-[0_2px_10px_rgb(0,0,0,0.05)] text-center">
             <div className="w-12 h-12 mx-auto flex items-center justify-center bg-blue-50 rounded-full text-blue-600">
               <ShieldCheck size={22} />
@@ -200,7 +188,6 @@ export default function LabTestPage() {
             </p>
           </div>
 
-          {/* Card 2 */}
           <div className="bg-white rounded-xl p-6 shadow-[0_2px_10px_rgb(0,0,0,0.05)] text-center">
             <div className="w-12 h-12 mx-auto flex items-center justify-center bg-blue-50 rounded-full text-blue-600">
               <Home size={22} />
@@ -215,7 +202,6 @@ export default function LabTestPage() {
             </p>
           </div>
 
-          {/* Card 3 */}
           <div className="bg-white rounded-xl p-6 shadow-[0_2px_10px_rgb(0,0,0,0.05)] text-center">
             <div className="w-12 h-12 mx-auto flex items-center justify-center bg-blue-50 rounded-full text-blue-600">
               <Activity size={22} />

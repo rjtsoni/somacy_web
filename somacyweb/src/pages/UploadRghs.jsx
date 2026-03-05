@@ -1,6 +1,8 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import { UploadCloud, FolderOpen, Camera, FileCheck2, Info, CheckCircle2, Wand2, ShieldCheck, Lock, Phone, Shield, ArrowRight } from 'lucide-react'
 const UploadRghs = () => {
+    const navigate = useNavigate()
     return (
         <div className="min-h-screen bg-[#f8fafc] flex flex-col font-sans w-full">
 
@@ -207,8 +209,10 @@ const UploadRghs = () => {
                     <button className="w-full sm:w-auto px-6 py-2.5 rounded-lg border border-gray-300 text-gray-700 font-semibold hover:bg-gray-50 transition-colors">
                         Save as Draft
                     </button>
-                    <button className="w-full sm:w-auto px-6 py-2.5 rounded-lg bg-blue-600 text-white font-semibold flex items-center justify-center gap-2 hover:bg-blue-700 transition-colors shadow-sm">
-                        Proceed to Medicine Selection
+                    <button
+                        onClick={() => navigate("/PReview")}
+                        className="w-full sm:w-auto px-6 py-2.5 rounded-lg bg-blue-600 text-white font-semibold flex items-center justify-center gap-2 hover:bg-blue-700 transition-colors shadow-sm">
+                        Proceed to Review
                         <ArrowRight className="w-4 h-4" />
                     </button>
                 </div>

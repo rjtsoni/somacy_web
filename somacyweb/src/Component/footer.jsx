@@ -4,7 +4,7 @@ import { ShieldCheck, Play, Facebook, Youtube, Instagram, Twitter, Apple, Mail, 
 const Footer = () => {
     return (
         <footer className="bg-[#f5f7fa] pt-10 pb-2 border-t border-slate-200">
-            <div className="max-w-7xl mx-auto px-6">
+            <div className="w-full px-6">
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-x-4 gap-y-12 pb-10 border-b border-slate-200">
                     <div className="flex flex-col space-y-6">
                         <div className="flex items-center gap-3">

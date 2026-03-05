@@ -2,14 +2,16 @@ import "./App.css";
 
 import Footer from "./Component/Footer";
 import Header from "./Component/Header";
-import RghsInfo from "./pages/RghsInfo";
-import Homepage from "./pages/Homepage";
+import Homepage from "./pages/homepage";
 import CartPage from "./pages/Cart";
 import { Route, Routes } from "react-router-dom";
 import MyOrder from "./pages/MyOrder";
 import MedicineComparison from "./pages/MedicineComaprison";
 import NotFound from "./pages/NotFound";
 import UploadRghs from "./pages/UploadRghs";
+import LabTestScreen from "./pages/LabTestScreen";
+import LabTestPage from "./pages/LabTestPage";
+import SlotBooking from "./pages/SlotBooking";
 
 function App() {
   return (
@@ -23,9 +25,12 @@ function App() {
           <Route path="/" element={<Homepage />} />
           <Route path="/cart" element={<CartPage />} />
           <Route path="/myorder" element={<MyOrder />} />
-          <Route path="/lab-test" element={<RghsInfo />} />
+          <Route path="/lab-test" element={<LabTestScreen />} />
           <Route path="/medicine-search" element={<MedicineComparison />} />
           <Route path="/UploadRghs" element={<UploadRghs />} />
+          <Route path="/lab-test/:category" element={<LabTestPage />} />
+          <Route path="/lab-test/:category/slot" element={<SlotBooking />} />
+
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>

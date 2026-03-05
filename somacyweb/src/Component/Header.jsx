@@ -25,6 +25,10 @@ const Header = () => {
         navigate("/myorder");
         break;
 
+      case "ProductCart":
+        navigate("/productcart");
+        break;
+
       case "Cart":
         navigate("/cart");
         break;
@@ -133,6 +137,17 @@ const Header = () => {
             }`}
           >
             MyOrder
+          </button>
+
+           <button
+            onClick={() => handleClick("ProductCart")}
+            className={`font-medium ${
+              activeTab === "ProductCart"
+                ? "text-blue-600 border-b-2 border-blue-600 pb-1"
+                : "text-gray-600"
+            }`}
+          >
+            Doctor's Consultancy
           </button>
         </div>
 

@@ -36,7 +36,6 @@ function App() {
           <Route path="/lab-test" element={<LabTestScreen />} />
           <Route path="/medicine-search" element={<MedicineComparison />} />
           <Route path="/UploadRghs" element={<UploadRghs />} />
-          <Route path="/:category" element={<LabTestList />} />
           <Route path="/lab-test/:category" element={<LabTestList />} />
           <Route path="/lab-test/:category/:testName" element={<LabTestPage />} />
           <Route path="/lab-test/:category/slot" element={<SlotBooking />} />

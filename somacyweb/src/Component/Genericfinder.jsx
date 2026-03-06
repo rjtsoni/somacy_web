@@ -18,7 +18,7 @@ const Genericfinder = () => {
             Search your prescribed medicine and find high-quality generic
             equivalents that are{" "}
             <span className="text-blue-600 font-bold">
-              equally effective but much more affordablesdgfhg.
+              equally effective but much more affordable.
             </span>
           </p>
 

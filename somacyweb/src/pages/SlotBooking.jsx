@@ -2,7 +2,7 @@ import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-
+import HelpDesk from "../Component/HelpDesk";
 export default function SlotBooking() {
   const { category } = useParams();
 
@@ -45,19 +45,17 @@ export default function SlotBooking() {
             <div className="flex flex-col items-center">
               <div
                 className={`w-8 h-8 flex items-center justify-center rounded-full
-        ${
-          currentStep === 2
-            ? "bg-blue-600 text-white"
-            : "bg-gray-200 text-gray-500"
-        }`}
+        ${currentStep === 2
+                    ? "bg-blue-600 text-white"
+                    : "bg-gray-200 text-gray-500"
+                  }`}
               >
                 2
               </div>
 
               <span
-                className={`text-sm mt-2 ${
-                  currentStep === 2 ? "text-blue-600" : "text-gray-400"
-                }`}
+                className={`text-sm mt-2 ${currentStep === 2 ? "text-blue-600" : "text-gray-400"
+                  }`}
               >
                 Schedule
               </span>
@@ -115,11 +113,10 @@ export default function SlotBooking() {
                         key={s}
                         onClick={() => setSlot(s)}
                         className={`border rounded-lg py-2 text-sm
-                        ${
-                          slot === s
+                        ${slot === s
                             ? "border-blue-600 bg-blue-50 text-blue-600"
                             : "hover:border-blue-400"
-                        }`}
+                          }`}
                       >
                         {s}
                       </button>
@@ -136,11 +133,10 @@ export default function SlotBooking() {
                         key={s}
                         onClick={() => setSlot(s)}
                         className={`border rounded-lg py-2 text-sm
-                        ${
-                          slot === s
+                        ${slot === s
                             ? "border-blue-600 bg-blue-50 text-blue-600"
                             : "hover:border-blue-400"
-                        }`}
+                          }`}
                       >
                         {s}
                       </button>
@@ -285,20 +281,7 @@ export default function SlotBooking() {
             </div>
 
             {/* NEED ASSISTANCE CARD */}
-
-            <div className="bg-blue-50 border border-blue-100 rounded-xl p-6">
-              <h4 className="font-semibold text-gray-800 mb-2">
-                Need Assistance?
-              </h4>
-
-              <p className="text-sm text-gray-600 mb-4">
-                Our health advisors are available to help you with scheduling.
-              </p>
-
-              <button className="text-blue-600 font-semibold flex items-center gap-2">
-                Call +91 1800-SOMACY 📞
-              </button>
-            </div>
+            < HelpDesk />
           </div>
         </div>
 

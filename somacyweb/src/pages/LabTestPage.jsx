@@ -60,6 +60,7 @@ export default function LabTestPage() {
                   <span className="text-2xl font-bold text-blue-600">₹0</span>
 
                   <button
+
                     onClick={() => navigate(`/lab-test/${category}/slot`)}
                     className="bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700"
                   >

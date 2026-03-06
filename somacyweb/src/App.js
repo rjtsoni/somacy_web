@@ -9,6 +9,7 @@ import MyOrder from "./pages/MyOrder";
 import MedicineComparison from "./pages/MedicineComaprison";
 import NotFound from "./pages/NotFound";
 import LabTestScreen from "./pages/LabTestScreen";
+import LabTestList from "./pages/LabTestList";
 import LabTestPage from "./pages/LabTestPage";
 import SlotBooking from "./pages/SlotBooking";
 import UploadRghs from "./pages/UploadRghs";
@@ -35,7 +36,9 @@ function App() {
           <Route path="/lab-test" element={<LabTestScreen />} />
           <Route path="/medicine-search" element={<MedicineComparison />} />
           <Route path="/UploadRghs" element={<UploadRghs />} />
-          <Route path="/lab-test/:category" element={<LabTestPage />} />
+          <Route path="/:category" element={<LabTestList />} />
+          <Route path="/lab-test/:category" element={<LabTestList />} />
+          <Route path="/lab-test/:category/:testName" element={<LabTestPage />} />
           <Route path="/lab-test/:category/slot" element={<SlotBooking />} />
           <Route path="/PReview" element={<PReview />} />
           <Route path="/drugs/:medicineName" element={<ProductCart />} />

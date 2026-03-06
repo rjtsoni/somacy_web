@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate, useParams, useLocation } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { Search, ChevronRight, Star, Clock, ShieldCheck, MapPin, ChevronDown } from "lucide-react";
 
 import Lab from "../Component/Lab";
@@ -95,18 +95,19 @@ const TestCard = ({ test, onDetail }) => (
 export default function LabTestList() {
     const { category } = useParams();
     const navigate = useNavigate();
-    const location = useLocation();
 
     const [search, setSearch] = useState("");
     const [currentPage, setCurrentPage] = useState(1);
 
     const itemsPerPage = 6;
 
-    const normalizedCategory = category?.toLowerCase() || "";
+    const normalizedCategory = category?.toLowerCase();
 
     const allTests = Object.values(CATEGORY_TESTS).flat();
 
-    const tests = CATEGORY_TESTS[normalizedCategory] || allTests;
+    const tests = normalizedCategory && CATEGORY_TESTS[normalizedCategory]
+        ? CATEGORY_TESTS[normalizedCategory]
+        : allTests;
 
     const configMap = {
         lab: { label: "Lab Tests", component: <Lab />, listLabel: "Tests" },
@@ -116,15 +117,17 @@ export default function LabTestList() {
 
     const config = configMap[normalizedCategory] || configMap.lab;
 
+    const searchLower = search.toLowerCase();
+
     const filtered = tests.filter((t) =>
-        t.name.toLowerCase().includes(search.toLowerCase())
+        t.name.toLowerCase().includes(searchLower)
     );
 
     const start = (currentPage - 1) * itemsPerPage;
     const currentItems = filtered.slice(start, start + itemsPerPage);
 
     const displayName = category
-        ? category.charAt(0).toUpperCase() + category.slice(1)
+        ? category[0].toUpperCase() + category.slice(1)
         : "All";
 
     return (
@@ -172,7 +175,6 @@ export default function LabTestList() {
                     <span className="text-gray-900">{displayName}</span>
                 </div>
 
-                {/* Category Component */}
                 {config.component}
 
                 <div className="mt-12">

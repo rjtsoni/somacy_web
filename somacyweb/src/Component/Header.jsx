@@ -29,6 +29,10 @@ const Header = () => {
         navigate("/productcart");
         break;
 
+      case "DoctorConsultancy":
+        navigate("/doctorconsultancy");
+        break;
+
       case "Cart":
         navigate("/cart");
         break;
@@ -53,7 +57,7 @@ const Header = () => {
   className="w-9 h-9 object-contain"
 />
     <div className="leading-tight">
-      <h1 className="text-base font-semibold text-blue-600">Somacy</h1>
+      <h1 className="text-base font-bold text-blue-600">Somacy</h1>
       <p className="text-[10px] text-gray-400 tracking-wider">
         PREMIUM CARE
       </p>
@@ -140,9 +144,9 @@ const Header = () => {
           </button>
 
            <button
-            onClick={() => handleClick("ProductCart")}
+            onClick={() => handleClick("DoctorConsultancy")}
             className={`font-medium ${
-              activeTab === "ProductCart"
+              activeTab === "DoctorConsultancy"
                 ? "text-blue-600 border-b-2 border-blue-600 pb-1"
                 : "text-gray-600"
             }`}

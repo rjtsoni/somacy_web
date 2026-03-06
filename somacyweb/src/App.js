@@ -20,6 +20,7 @@ import CheckoutPage from "./pages/CheckoutPage";
 import OrderSuccess from "./pages/OrderSuccess";
 import OrderConfirmed from "./pages/OrderConfirmed";
 import TrackOrder from "./pages/TrackOrder";
+import DoctorConsultancy from "./pages/DoctorConsultancy";
 import OrderDetails from "./pages/OrderDetails";
 
 function App() {
@@ -56,6 +57,8 @@ function App() {
           <Route path="/order-confirmed" element={<OrderConfirmed />} />
           {/* <Route path="/track-order/:orderId" element={<TrackOrder />} /> */}
           <Route path="/track-order" element={<TrackOrder />} />
+          <Route path="/productcart" element={<ProductCart />} />
+          <Route path="/doctorconsultancy" element={<DoctorConsultancy/>}/>
           {/* <Route path="/order/:orderId" element={<OrderDetails />} /> */}
           <Route path="/order" element={<OrderDetails />} />
 

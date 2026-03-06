@@ -1,14 +1,11 @@
 import {
   Check,
   Truck,
-  Package,
-  ShieldCheck,
   User,
   MapPin,
   Phone,
   MessageCircle,
   Download,
-  HelpCircle,
   FileText,
 } from "lucide-react";
 

@@ -69,8 +69,14 @@ const PriceCard = () => {
         </div>
 
         <button
+          onClick={() => navigate("/order-confirmed")}
+          className="w-full bg-green-600 hover:bg-blue-700 text-white py-3 rounded-lg font-medium"
+        >
+          Buy Now
+        </button>
+        <button
           onClick={() => navigate("/cart")}
-          className="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-lg font-medium"
+          className="w-full bg-gray-600 hover:bg-green-700 text-white py-3 rounded-lg font-medium"
         >
           Add to Cart
         </button>

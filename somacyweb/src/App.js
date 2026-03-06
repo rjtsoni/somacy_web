@@ -20,6 +20,7 @@ import CheckoutPage from "./pages/CheckoutPage";
 import OrderSuccess from "./pages/OrderSuccess";
 import OrderConfirmed from "./pages/OrderConfirmed";
 import TrackOrder from "./pages/TrackOrder";
+import OrderDetails from "./pages/OrderDetails";
 
 function App() {
   return (
@@ -36,8 +37,10 @@ function App() {
           <Route path="/lab-test" element={<LabTestScreen />} />
           <Route path="/medicine-search" element={<MedicineComparison />} />
           <Route path="/UploadRghs" element={<UploadRghs />} />
-          <Route path="/lab-test/:category" element={<LabTestList />} />
-          <Route path="/lab-test/:category/:testName" element={<LabTestPage />} />
+          <Route path="/:category" element={<LabTestList />} />
+          {/* <Route path="/lab-test/:category" element={<LabTestList />} /> */}
+          <Route path="/:category/:testName" element={<LabTestPage />} />
+
           <Route path="/lab-test/:category/slot" element={<SlotBooking />} />
           <Route path="/PReview" element={<PReview />} />
           <Route path="/drugs/:medicineName" element={<ProductCart />} />
@@ -53,6 +56,8 @@ function App() {
           <Route path="/order-confirmed" element={<OrderConfirmed />} />
           {/* <Route path="/track-order/:orderId" element={<TrackOrder />} /> */}
           <Route path="/track-order" element={<TrackOrder />} />
+          {/* <Route path="/order/:orderId" element={<OrderDetails />} /> */}
+          <Route path="/order" element={<OrderDetails />} />
 
           <Route path="*" element={<NotFound />} />
         </Routes>

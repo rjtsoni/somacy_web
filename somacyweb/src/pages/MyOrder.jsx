@@ -145,12 +145,15 @@ const MyOrder = () => {
 
                     <div className="border-t mt-6 pt-4 flex justify-between items-center">
                       <div className="flex gap-6 text-sm text-gray-600">
-                        <span className="cursor-pointer hover:text-blue-600">
+                        <span
+                          onClick={() => navigate("/order")}
+                          className="cursor-pointer hover:text-blue-600"
+                        >
                           View Details
                         </span>
-                        <span className="cursor-pointer hover:text-blue-600">
+                        {/* <span className="cursor-pointer hover:text-blue-600">
                           Help
-                        </span>
+                        </span> */}
                       </div>
 
                       <button

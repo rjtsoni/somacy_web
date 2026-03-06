@@ -10,7 +10,6 @@ import {
   WineOff,
 } from "lucide-react";
 import { Activity } from "react";
-import HelpDest from "../Component/HelpDesk";
 import HelpDesk from "../Component/HelpDesk";
 
 export default function LabTestPage() {

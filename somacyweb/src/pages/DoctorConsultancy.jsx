@@ -1,7 +1,8 @@
-import { Search, MapPin, Star, Zap } from "lucide-react"
-import { useState } from "react"
-import logo from "../Assets/logo.png"
-import Pagination from "../Component/Pagination"
+import { Search, MapPin, Star, Zap } from "lucide-react";
+import { useState } from "react";
+import logo from "../Assets/logo.png";
+import Pagination from "../Component/Pagination";
+import { useNavigate } from "react-router-dom";
 
 const InstantConsultationBanner = () => (
   <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-xl p-6 flex items-center justify-between text-white shadow">
@@ -21,14 +22,13 @@ const InstantConsultationBanner = () => (
       Start Instant Consultation
     </button>
   </div>
-)
+);
 
 const FilterSidebar = () => {
-  const [rghsOnly, setRghsOnly] = useState(true)
-  const [consultType, setConsultType] = useState("All")
+  const [rghsOnly, setRghsOnly] = useState(true);
+  const [consultType, setConsultType] = useState("All");
   return (
     <aside className="w-72 flex-shrink-0 space-y-6">
-
       <div className="bg-white border rounded-xl p-4 flex items-center justify-between">
         <div>
           <h3 className="font-semibold text-sm">RGHS Specialist</h3>
@@ -38,13 +38,16 @@ const FilterSidebar = () => {
         </div>
         <button
           onClick={() => setRghsOnly(!rghsOnly)}
-          className={`w-11 h-6 flex-shrink-0 flex items-center rounded-full p-0.5 transition-colors duration-200 ${rghsOnly ? "bg-blue-600" : "bg-gray-300"
-            }`}
+          className={`w-11 h-6 flex-shrink-0 flex items-center rounded-full p-0.5 transition-colors duration-200 ${
+            rghsOnly ? "bg-blue-600" : "bg-gray-300"
+          }`}
         >
-          <div className={`bg-white w-5 h-5 rounded-full shadow transform transition-transform duration-200 ${rghsOnly ? "translate-x-5" : "translate-x-0"
-            }`}></div>
+          <div
+            className={`bg-white w-5 h-5 rounded-full shadow transform transition-transform duration-200 ${
+              rghsOnly ? "translate-x-5" : "translate-x-0"
+            }`}
+          ></div>
         </button>
-
       </div>
 
       <div className="bg-white border rounded-xl p-5">
@@ -103,7 +106,6 @@ const FilterSidebar = () => {
           </div>
         </div>
 
-
         <div>
           <h4 className="text-xs font-semibold text-gray-500 mb-3">
             CONSULTATION TYPE
@@ -114,10 +116,11 @@ const FilterSidebar = () => {
               <button
                 key={type}
                 onClick={() => setConsultType(type)}
-                className={`px-3 py-1 rounded-full text-sm ${consultType === type
-                  ? "bg-blue-600 text-white"
-                  : "bg-gray-100 text-gray-600"
-                  }`}
+                className={`px-3 py-1 rounded-full text-sm ${
+                  consultType === type
+                    ? "bg-blue-600 text-white"
+                    : "bg-gray-100 text-gray-600"
+                }`}
               >
                 {type}
               </button>
@@ -126,12 +129,12 @@ const FilterSidebar = () => {
         </div>
       </div>
     </aside>
-  )
-}
+  );
+};
 
 const DoctorList = () => {
-  const [currentPage, setCurrentPage] = useState(1)
-  const itemsPerPage = 2
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 2;
 
   const doctors = [
     {
@@ -143,7 +146,7 @@ const DoctorList = () => {
       tags: ["HEART SURGERY", "ANGIOPLASTY"],
       image: logo,
       status: "Online",
-      fee: "0"
+      fee: "0",
     },
     {
       name: "Dr. Rajesh Kumar",
@@ -154,9 +157,9 @@ const DoctorList = () => {
       tags: ["ECG TESTING", "HEART HEALTH"],
       image: logo,
       status: "Online",
-      fee: "100"
+      fee: "100",
     },
-     {
+    {
       name: "Dr. Sidesh Saini",
       specialization: "Consultant Cardiologist",
       rating: "4.2 (840 reviews)",
@@ -165,9 +168,9 @@ const DoctorList = () => {
       tags: ["ECG TESTING", "HEART HEALTH"],
       image: logo,
       status: "Online",
-      fee: "100"
+      fee: "100",
     },
-     {
+    {
       name: "Dr. Virat Kohli",
       specialization: "Consultant Cardiologist",
       rating: "4.7 (840 reviews)",
@@ -176,12 +179,12 @@ const DoctorList = () => {
       tags: ["ECG TESTING", "HEART HEALTH"],
       image: logo,
       status: "Online",
-      fee: "100"
-    }
-  ]
+      fee: "100",
+    },
+  ];
 
-  const startIndex = (currentPage - 1) * itemsPerPage
-  const paginatedDoctors = doctors.slice(startIndex, startIndex + itemsPerPage)
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const paginatedDoctors = doctors.slice(startIndex, startIndex + itemsPerPage);
 
   return (
     <div>
@@ -197,89 +200,84 @@ const DoctorList = () => {
         onPageChange={setCurrentPage}
       />
     </div>
-  )
-}
+  );
+};
 
-const DoctorCard = ({ doctor }) => (
-  <div className="bg-white border rounded-xl p-6 flex justify-between items-center shadow-sm">
+const DoctorCard = ({ doctor }) => {
+  const navigate = useNavigate();
+  return (
+    <div className="bg-white border rounded-xl p-6 flex justify-between items-center shadow-sm">
+      <div className="flex gap-5">
+        <img src={doctor.image} className="w-24 h-24 rounded-xl object-cover" />
 
-    <div className="flex gap-5">
+        <div>
+          <h3 className="text-lg font-semibold">{doctor.name}</h3>
+          <p className="text-blue-600 text-sm font-medium">
+            {doctor.specialization}
+          </p>
 
-      <img
-        src={doctor.image}
-        className="w-24 h-24 rounded-xl object-cover"
-      />
+          <div className="flex items-center gap-4 text-sm text-gray-600 mt-2">
+            <div className="flex items-center gap-1">
+              <Star size={14} className="text-yellow-500" />
+              {doctor.rating}
+            </div>
 
-      <div>
-        <h3 className="text-lg font-semibold">{doctor.name}</h3>
-        <p className="text-blue-600 text-sm font-medium">
-          {doctor.specialization}
-        </p>
-
-        <div className="flex items-center gap-4 text-sm text-gray-600 mt-2">
-          <div className="flex items-center gap-1">
-            <Star size={14} className="text-yellow-500" />
-            {doctor.rating}
+            <span>{doctor.experience} Years Exp</span>
           </div>
 
-          <span>{doctor.experience} Years Exp</span>
+          <div className="flex gap-2 mt-3">
+            {doctor.tags.map((tag) => (
+              <span
+                key={tag}
+                className="text-xs bg-blue-50 text-blue-600 px-2 py-1 rounded"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+
+          <div className="flex items-center gap-1 text-sm text-gray-500 mt-3">
+            <MapPin size={14} />
+            {doctor.location}
+          </div>
+
+          <span className="inline-block mt-2 text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">
+            {doctor.status}
+          </span>
         </div>
-
-        <div className="flex gap-2 mt-3">
-          {doctor.tags.map(tag => (
-            <span
-              key={tag}
-              className="text-xs bg-blue-50 text-blue-600 px-2 py-1 rounded"
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
-
-        <div className="flex items-center gap-1 text-sm text-gray-500 mt-3">
-          <MapPin size={14} />
-          {doctor.location}
-        </div>
-
-        <span className="inline-block mt-2 text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">
-          {doctor.status}
-        </span>
-
-      </div>
-    </div>
-
-    <div className="text-right flex flex-col items-end space-y-3">
-      <div>
-        <p className="text-xs text-gray-500">Consultation Fee</p>
-        <p className="text-green-600 font-bold text-xl">₹{doctor.fee}</p>
       </div>
 
-      <button className="bg-blue-600 text-white px-5 py-2 rounded-lg font-medium w-full hover:bg-blue-800">
-        Book Appointment
-      </button>
+      <div className="text-right flex flex-col items-end space-y-3">
+        <div>
+          <p className="text-xs text-gray-500">Consultation Fee</p>
+          <p className="text-green-600 font-bold text-xl">₹{doctor.fee}</p>
+        </div>
 
-      <button className="border px-5 py-2 rounded-lg font-medium w-full">
-        View Profile
-      </button>
+        <button className="bg-blue-600 text-white px-5 py-2 rounded-lg font-medium w-full hover:bg-blue-800">
+          Book Appointment
+        </button>
+
+        <button
+          onClick={() => navigate("/doctor-profile")}
+          className="border px-5 py-2 rounded-lg font-medium w-full"
+        >
+          View Profile
+        </button>
+      </div>
     </div>
-  </div>
-)
-
-
+  );
+};
 
 export default function DoctorsPage() {
   return (
     <div className="bg-gray-50 min-h-screen p-8">
-
       <div className="flex justify-between items-center mb-6">
-
         <div>
-          <h1 className="text-2xl font-bold">
-            Book a Doctor Consultation
-          </h1>
+          <h1 className="text-2xl font-bold">Book a Doctor Consultation</h1>
 
           <p className="text-gray-500 text-sm">
-            Find and book appointments with top-rated specialists or RGHS empanenled doctors.
+            Find and book appointments with top-rated specialists or RGHS
+            empanenled doctors.
           </p>
         </div>
 
@@ -291,23 +289,17 @@ export default function DoctorsPage() {
             placeholder="Search Specialty, Doctor, or Hospital..."
           />
         </div>
-
       </div>
 
       <InstantConsultationBanner />
 
       <div className="flex gap-8 mt-8">
-
         <FilterSidebar />
 
         <div className="flex-1">
-
           <DoctorList />
-
         </div>
-
       </div>
-
     </div>
-  )
+  );
 }

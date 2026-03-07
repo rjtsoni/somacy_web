@@ -9,7 +9,7 @@ const Genericfinder = () => {
   };
   return (
     <section className="py-2 md:py-4 bg-slate-50 flex justify-center items-center font-sans">
-      <div className="max-w-7.5xl w-full bg-white rounded-[40px] shadow-xl shadow-slate-200/50 flex flex-col lg:flex-row gap-6 p-6 md:p-8 border border-slate-100 transition-all duration-500 hover:shadow-2xl hover:shadow-slate-300/50">
+      <div className="max-w-8xl w-full mr-6 ml-6 bg-white rounded-[40px] shadow-xl shadow-slate-200/50 flex flex-col lg:flex-row gap-6 p-6 md:p-8 border border-slate-100 transition-all duration-500 hover:shadow-2xl hover:shadow-slate-300/50">
         <div className="flex-[1.4] flex flex-col justify-center">
           <h1 className="text-2xl font-bold text-slate-900 tracking-tight">
             Generic Medicine Finder

@@ -8,7 +8,7 @@ import Labtestpackage from "../Component/Labtestpackage";
 import Genericfinder from "../Component/Genericfinder";
 const Homepage = () => {
     return (
-        <div className="overflow-x-hidden w-full max-w-[100vw]">
+        <div className="overflow-x-hidden w-full max-w-full mx-auto ">
             <Hero />
             <Labtestpackage />
             <Genericfinder />

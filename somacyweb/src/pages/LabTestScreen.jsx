@@ -92,16 +92,17 @@ const LabTestScreen = () => {
       </section>
 
       <section className="py-12 px-6 w-full">
-        <h2 className="text-2xl font-bold text-gray-900 mb-8">
-          Top Booked Tests & Packages
-        </h2>
-        <button
-          onClick={() => navigate("/lab")}
-          className="mt-6 w-full bg-blue-600 text-white font-bold py-2.5 rounded-lg hover:bg-blue-700 transition active:scale-[0.98]"
-        >
-          view all
-        </button>
-
+        <div className="flex items-center justify-between">
+          <h2 className="text-2xl font-bold text-gray-900 mb-8">
+            Top Booked Tests & Packages
+          </h2>
+          <button
+            onClick={() => navigate("/lab")}
+            className="text-blue-600 text-sm font-semibold flex items-center gap-1 hover:underline"
+          >
+            View All →
+          </button>
+        </div>
         <div className="grid md:grid-cols-3 gap-6">
           {TOP_TESTS.map((test) => (
             <div

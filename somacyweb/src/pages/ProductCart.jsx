@@ -231,7 +231,7 @@ const GenericCard = ({ name, price, company, save, mrp }) => {
           <p className="text-xs text-gray-400 line-through">MRP ₹{mrp}</p>
           <p className="text-xl font-bold">₹{price}</p>
         </div>
-        <button className="border border-blue-500 text-blue-600 font-semibold text-xs px-5 py-2 rounded-lg hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-colors">
+        <button className="border border-blue-500 text-blue-600 font-semibold text-xs px-5 py-1 rounded-lg hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-colors">
           ADD
         </button>
       </div>

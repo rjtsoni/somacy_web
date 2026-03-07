@@ -38,14 +38,12 @@ const FilterSidebar = () => {
         </div>
         <button
           onClick={() => setRghsOnly(!rghsOnly)}
-          className={`w-11 h-6 flex-shrink-0 flex items-center rounded-full p-0.5 transition-colors duration-200 ${
-            rghsOnly ? "bg-blue-600" : "bg-gray-300"
-          }`}
+          className={`w-11 h-6 flex-shrink-0 flex items-center rounded-full p-0.5 transition-colors duration-200 ${rghsOnly ? "bg-blue-600" : "bg-gray-300"
+            }`}
         >
           <div
-            className={`bg-white w-5 h-5 rounded-full shadow transform transition-transform duration-200 ${
-              rghsOnly ? "translate-x-5" : "translate-x-0"
-            }`}
+            className={`bg-white w-5 h-5 rounded-full shadow transform transition-transform duration-200 ${rghsOnly ? "translate-x-5" : "translate-x-0"
+              }`}
           ></div>
         </button>
       </div>
@@ -116,11 +114,10 @@ const FilterSidebar = () => {
               <button
                 key={type}
                 onClick={() => setConsultType(type)}
-                className={`px-3 py-1 rounded-full text-sm ${
-                  consultType === type
+                className={`px-3 py-1 rounded-full text-sm ${consultType === type
                     ? "bg-blue-600 text-white"
                     : "bg-gray-100 text-gray-600"
-                }`}
+                  }`}
               >
                 {type}
               </button>
@@ -270,7 +267,7 @@ const DoctorCard = ({ doctor }) => {
 
 export default function DoctorsPage() {
   return (
-    <div className="bg-gray-50 min-h-screen p-8">
+    <div className=" max-w-full mx-auto bg-gray-50 min-h-screen p-8">
       <div className="flex justify-between items-center mb-6">
         <div>
           <h1 className="text-2xl font-bold">Book a Doctor Consultation</h1>

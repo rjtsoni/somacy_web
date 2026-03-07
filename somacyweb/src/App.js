@@ -22,6 +22,8 @@ import OrderConfirmed from "./pages/OrderConfirmed";
 import TrackOrder from "./pages/TrackOrder";
 import DoctorConsultancy from "./pages/DoctorConsultancy";
 import OrderDetails from "./pages/OrderDetails";
+import DoctorProfile from "./pages/DoctorProfile";
+import ViewSchedule from "./pages/ViewSchedule";
 
 import HelpCenter from "./pages/HelpCenter";
 
@@ -67,6 +69,8 @@ function App() {
           <Route path="/doctorconsultancy" element={<DoctorConsultancy />} />
           {/* <Route path="/order/:orderId" element={<OrderDetails />} /> */}
           <Route path="/order" element={<OrderDetails />} />
+          <Route path="/doctor-profile" element={<DoctorProfile />} />
+          <Route path="/doctor-schedule" element={<ViewSchedule />} />
 
           <Route path="*" element={<NotFound />} />
         </Routes>

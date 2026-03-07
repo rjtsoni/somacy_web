@@ -1,8 +1,10 @@
 import { Home, Stethoscope } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export default function NotFound() {
+  const navigate = useNavigate();
   return (
-    <div className="min-h-screen flex items-center justify-center bg-slate-50 px-6 relative overflow-hidden">
+    <div className="min-h-[calc(100vh-80px)] flex items-center justify-center bg-slate-50 px-6 relative overflow-hidden">
       <div
         className="absolute inset-0 
         bg-[radial-gradient(#dbeafe_1px,transparent_1px)] 
@@ -57,6 +59,7 @@ export default function NotFound() {
           </span>
         </p>
         <button
+          onClick={() => navigate("/")}
           className="mt-8 inline-flex items-center gap-2 
           bg-blue-600 hover:bg-blue-700 
           text-white px-7 py-3 

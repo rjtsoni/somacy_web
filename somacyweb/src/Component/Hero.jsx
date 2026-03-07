@@ -1,7 +1,8 @@
 import React from 'react';
 import { Upload, CreditCard, Pill, Award, Truck, ArrowRight, Bookmark, ChevronRight, ShieldAlert } from 'lucide-react';
-
+import { useNavigate } from 'react-router-dom';
 const Hero = () => {
+    const navigate = useNavigate();
     return (
         <section className="bg-[#f8fafc] pt-4 md:pt-6 font-sans">
             <div className="w-full px-4 sm:px-6 lg:px-8">
@@ -61,7 +62,10 @@ const Hero = () => {
 
 
                             <div className="flex flex-col sm:flex-row gap-4 mb-5">
-                                <button className="flex items-center justify-center gap-3 bg-white text-[#0A1A2F] hover:bg-[#CFB27F] hover:text-white px-6 py-2.5 rounded-full font-black text-xs tracking-wide shadow-xl">
+                                <button
+                                    onClick={() => navigate("/UploadRghs")}
+                                    className="flex items-center justify-center gap-3 bg-white text-[#0A1A2F] hover:bg-[#CFB27F] hover:text-white px-6 py-2.5 rounded-full font-black text-xs tracking-wide shadow-xl">
+
                                     <Upload size={16} strokeWidth={2.5} />
                                     Upload Prescription
                                 </button>

@@ -40,7 +40,7 @@ export default function OrderDetails() {
 
   return (
     <div className="bg-slate-50 min-h-screen py-8">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-full mx-auto px-6">
         {/* HEADER */}
 
         <div className="bg-white rounded-xl border shadow-sm p-6 mb-6">

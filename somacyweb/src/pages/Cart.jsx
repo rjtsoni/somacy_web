@@ -66,7 +66,7 @@ export default function CartPage() {
   const navigate = useNavigate();
   return (
     <div className="w-full min-h-screen bg-gray-50">
-      <div className="max-w-7xl w-full mx-auto px-4 py-8 text-left">
+      <div className="max-w-full mx-auto px-6 py-8 text-left">
         {/* Breadcrumb */}
         <p className="text-sm text-gray-500 mb-2">Home / Shopping Cart</p>
 

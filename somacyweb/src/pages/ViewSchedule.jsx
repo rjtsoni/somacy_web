@@ -25,19 +25,26 @@ export default function ViewSchedule() {
   };
 
   return (
-    <div className="max-w-6xl mx-auto p-6">
+    <div className="max-w-full mx-auto p-6">
       {/* Header */}
       <h2 className="text-2xl font-semibold mb-6">Doctor Schedule</h2>
 
       <div className="grid md:grid-cols-3 gap-6">
         {/* Calendar */}
-        <div className="bg-white p-5 rounded-xl shadow-sm">
-          <div className="flex items-center gap-2 mb-3">
+        <div className="bg-white p-6 rounded-2xl shadow-md border border-gray-100">
+          <div className="flex items-center gap-2 mb-4">
             <CalendarDays size={18} className="text-blue-600" />
-            <p className="font-semibold">Select Date</p>
+            <p className="font-semibold text-gray-700">Select Date</p>
           </div>
 
-          <Calendar onChange={setDate} value={date} minDate={new Date()} />
+          <Calendar
+            value={date}
+            onChange={setDate}
+            minDate={new Date()}
+            prev2Label={null}
+            next2Label={null}
+            className="w-full border-none"
+          />
         </div>
 
         {/* Slots */}
@@ -59,12 +66,11 @@ export default function ViewSchedule() {
                       onClick={() => setSelectedSlot(slot)}
                       className={`px-4 py-2 rounded-lg border text-sm transition
 
-                        ${
-                          isBooked
-                            ? "bg-gray-200 text-gray-400 cursor-not-allowed"
-                            : selectedSlot === slot
-                              ? "bg-blue-600 text-white border-blue-600"
-                              : "hover:bg-blue-50"
+                        ${isBooked
+                          ? "bg-gray-200 text-gray-400 cursor-not-allowed"
+                          : selectedSlot === slot
+                            ? "bg-blue-600 text-white border-blue-600"
+                            : "hover:bg-blue-50"
                         }
                       `}
                     >

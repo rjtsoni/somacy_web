@@ -5,7 +5,7 @@ export default function BookingConfirmed() {
 
   return (
     <div className="bg-gray-50 min-h-screen p-6">
-      <div className="max-w-7xl mx-auto space-y-6">
+      <div className="max-w-full mx-autospace-y-6">
         <div className="bg-white rounded-xl p-10 shadow-sm text-center">
           <div className="w-16 h-16 mx-auto bg-green-100 flex items-center justify-center rounded-full mb-4">
             <span className="text-green-600 text-2xl">✔</span>
@@ -25,7 +25,7 @@ export default function BookingConfirmed() {
           </div>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-6">
+        <div className="grid lg:grid-cols-3 gap-6 mt-6">
           {/* LEFT SECTION */}
           <div className="lg:col-span-2 space-y-6">
             <div className="bg-white rounded-xl shadow-sm p-6">

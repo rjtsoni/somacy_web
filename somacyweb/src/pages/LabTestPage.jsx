@@ -18,7 +18,7 @@ export default function LabTestPage() {
 
   return (
     <div className="bg-gray-50 min-h-screen">
-      <div className="max-w-7xl mx-auto px-6 py-8">
+      <div className="max-w-full mx-auto px-6 py-8">
         {/* Breadcrumb */}
         <div className="text-sm text-gray-500 mb-6">
           Home › Lab Tests ›
@@ -168,7 +168,7 @@ export default function LabTestPage() {
           </div>
         </div>
       </div>
-      <div className="mt-10">
+      <div className="mb-10 max-w-full mx-auto mx-8 ">
         <h2 className="text-lg font-semibold text-gray-800 mb-6">
           Why Choose Somacy Labs?
         </h2>

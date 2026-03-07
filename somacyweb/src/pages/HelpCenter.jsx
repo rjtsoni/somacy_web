@@ -16,7 +16,7 @@ import ReactPlayer from "react-player";
 import HelpDesk from "../Component/HelpDesk";
 const HelpCenter = () => {
     return (
-        <div className="max-w-7xl mx-auto mt-10 px-6">
+        <div className="max-w-full mx-auto mt-10 px-6">
             {/* SEARCH*/}
             <div className="bg-gradient-to-b from-blue-600 to-[#0F0B59] rounded-xl shadow-lg py-10 px-6 text-white text-center">
                 <h2 className="text-3xl font-bold mb-2">

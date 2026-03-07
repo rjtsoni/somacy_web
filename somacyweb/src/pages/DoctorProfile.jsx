@@ -41,9 +41,9 @@ const DoctorProfile = () => {
   ];
 
   return (
-    <div className="bg-gray-50 min-h-screen">
+    <div className=" bg-gray-50 min-h-screen">
       {/* Container */}
-      <div className="max-w-7xl mx-auto px-4 py-8">
+      <div className="max-w-full mx-auto pl-4 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* LEFT CONTENT */}
           <div className="lg:col-span-2 space-y-6">
@@ -279,7 +279,7 @@ const DoctorProfile = () => {
 
           {/* RIGHT BOOKING CARD */}
           <div>
-            <div className="bg-white rounded-2xl shadow-md p-6 w-full max-w-sm relative">
+            <div className="bg-white rounded-2xl shadow-md p-6 w-full max-w-sm relative mx-auto">
               <h3 className="font-semibold text-lg mb-4">Book Consultation</h3>
 
               {/* Retail Fee */}

@@ -17,7 +17,7 @@ export default function TrackOrder() {
 
   return (
     <div className="min-h-screen bg-slate-50">
-      <div className="max-w-7xl mx-auto px-6 py-8">
+      <div className="max-w-full mx-auto px-6 py-8">
         {/* TOP HEADER */}
 
         <div className="flex justify-between items-center mb-6">

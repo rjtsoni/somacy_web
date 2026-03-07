@@ -156,7 +156,7 @@ const MedicineComparison = () => {
 
   return (
     <div className="bg-[#f6f6f8] min-h-screen text-[#0d121b]">
-      <div className="max-w-[1400px] mx-auto px-4 md:px-10 lg:px-10 py-6">
+      <div className="max-w-full mx-auto px-4 md:px-10 lg:px-10 py-6">
         <div className="mb-8">
           <h1 className="text-3xl font-black mb-2">
             Generic alternatives for Panadol 500mg

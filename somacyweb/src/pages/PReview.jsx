@@ -14,7 +14,7 @@ import HelpDesk from "../Component/HelpDesk";
 const PReview = () => {
   return (
     <div className="min-h-screen bg-[#f8fafc] flex flex-col font-sans w-full selection:bg-blue-100 overflow-x-hidden">
-      <header className="bg-white sticky top-0 z-50 border-b border-gray-100 px-4 md:px-12 py-2.5 flex items-center justify-end">
+      {/* <header className="bg-white sticky top-0 z-50 border-b border-gray-100 px-4 md:px-12 py-2.5 flex items-center justify-end">
         <div className="hidden md:flex items-center gap-8 text-[11px] font-bold text-slate-500 uppercase tracking-wider">
           <button className="hover:text-blue-600 transition-colors">
             Dashboard
@@ -32,9 +32,9 @@ const PReview = () => {
             />
           </div>
         </div>
-      </header>
+      </header> */}
 
-      <main className="flex-1 max-w-6xl mx-auto w-full px-4 md:px-8 py-2 md:py-4">
+      <main className="flex-1 max-w-full mx-auto px-4 md:px-8 py-2 md:py-4">
         <div className="flex flex-col gap-4">
           <div className="bg-white border border-slate-200/60 rounded-[1.5rem] p-4 md:p-5 shadow-sm relative overflow-hidden flex flex-col md:flex-row items-center gap-4">
             <div className="flex-1 text-center md:text-left">

@@ -20,7 +20,7 @@ const UploadRghs = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-slate-50 flex flex-col w-full">
+    <div className="min-h-screen bg-slate-50 flex flex-col max-w-full mx-auto">
       {/* PAGE CONTENT */}
       <main className="flex-1 w-full px-6 py-8">
         {/* Title */}

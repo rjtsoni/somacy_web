@@ -37,6 +37,10 @@ const Header = () => {
         navigate("/cart");
         break;
 
+      case "HelpCenter":
+        navigate("/help-center");
+        break;
+
       case "Signup":
         navigate("/signup");
         break;
@@ -49,20 +53,20 @@ const Header = () => {
   return (
     <header className="w-full bg-[#f5f7fa] border-b border-gray-200 px-8 py-3 flex items-center">
       {/* Logo */}
-      
-  <div className="flex items-center gap-3">
-    <img 
-  src={logo} 
-  alt="Somacy Logo" 
-  className="w-9 h-9 object-contain"
-/>
-    <div className="leading-tight">
-      <h1 className="text-base font-bold text-blue-600">Somacy</h1>
-      <p className="text-[10px] text-gray-400 tracking-wider">
-        PREMIUM CARE
-      </p>
-    </div>
-  </div>
+
+      <div className="flex items-center gap-3">
+        <img
+          src={logo}
+          alt="Somacy Logo"
+          className="w-9 h-9 object-contain"
+        />
+        <div className="leading-tight">
+          <h1 className="text-base font-bold text-blue-600">Somacy</h1>
+          <p className="text-[10px] text-gray-400 tracking-wider">
+            PREMIUM CARE
+          </p>
+        </div>
+      </div>
       <div
         className="flex items-center gap-3 cursor-pointer"
         onClick={() => handleClick("Medicines")}
@@ -91,18 +95,16 @@ const Header = () => {
 
           <button
             onClick={() => setMode("RGHS")}
-            className={`px-3 py-1 rounded-full transition ${
-              mode === "RGHS" ? "bg-blue-600 text-white" : "text-gray-600"
-            }`}
+            className={`px-3 py-1 rounded-full transition ${mode === "RGHS" ? "bg-blue-600 text-white" : "text-gray-600"
+              }`}
           >
             RGHS
           </button>
 
           <button
             onClick={() => setMode("Retail")}
-            className={`px-3 py-1 rounded-full transition ${
-              mode === "Retail" ? "bg-blue-600 text-white" : "text-gray-600"
-            }`}
+            className={`px-3 py-1 rounded-full transition ${mode === "Retail" ? "bg-blue-600 text-white" : "text-gray-600"
+              }`}
           >
             Retail
           </button>
@@ -112,44 +114,49 @@ const Header = () => {
         <div className="hidden md:flex items-center gap-6 text-sm">
           <button
             onClick={() => handleClick("Medicines")}
-            className={`font-medium ${
-              activeTab === "Medicines"
-                ? "text-blue-600 border-b-2 border-blue-600 pb-1"
-                : "text-gray-600"
-            }`}
+            className={`font-medium ${activeTab === "Medicines"
+              ? "text-blue-600 border-b-2 border-blue-600 pb-1"
+              : "text-gray-600"
+              }`}
           >
             Medicines
           </button>
 
           <button
             onClick={() => handleClick("Lab Tests")}
-            className={`font-medium ${
-              activeTab === "Lab Tests"
-                ? "text-blue-600 border-b-2 border-blue-600 pb-1"
-                : "text-gray-600"
-            }`}
+            className={`font-medium ${activeTab === "Lab Tests"
+              ? "text-blue-600 border-b-2 border-blue-600 pb-1"
+              : "text-gray-600"
+              }`}
           >
             Lab Tests
+          </button>
+          <button
+            onClick={() => handleClick("HelpCenter")}
+            className={`font-medium ${activeTab === "HelpCenter"
+              ? "text-blue-600 border-b-2 border-blue-600 pb-1"
+              : "text-gray-600"
+              }`}
+          >
+            Help Center
           </button>
 
           <button
             onClick={() => handleClick("MyOrder")}
-            className={`font-medium ${
-              activeTab === "MyOrder"
-                ? "text-blue-600 border-b-2 border-blue-600 pb-1"
-                : "text-gray-600"
-            }`}
+            className={`font-medium ${activeTab === "MyOrder"
+              ? "text-blue-600 border-b-2 border-blue-600 pb-1"
+              : "text-gray-600"
+              }`}
           >
             MyOrder
           </button>
 
-           <button
+          <button
             onClick={() => handleClick("DoctorConsultancy")}
-            className={`font-medium ${
-              activeTab === "DoctorConsultancy"
-                ? "text-blue-600 border-b-2 border-blue-600 pb-1"
-                : "text-gray-600"
-            }`}
+            className={`font-medium ${activeTab === "DoctorConsultancy"
+              ? "text-blue-600 border-b-2 border-blue-600 pb-1"
+              : "text-gray-600"
+              }`}
           >
             Doctor's Consultancy
           </button>

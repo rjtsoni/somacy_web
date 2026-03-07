@@ -23,6 +23,8 @@ import TrackOrder from "./pages/TrackOrder";
 import DoctorConsultancy from "./pages/DoctorConsultancy";
 import OrderDetails from "./pages/OrderDetails";
 
+import HelpCenter from "./pages/HelpCenter";
+
 function App() {
   return (
     // <div className="min-h-screen flex flex-col">
@@ -38,9 +40,13 @@ function App() {
           <Route path="/lab-test" element={<LabTestScreen />} />
           <Route path="/medicine-search" element={<MedicineComparison />} />
           <Route path="/UploadRghs" element={<UploadRghs />} />
-          <Route path="/:category" element={<LabTestList />} />
-          {/* <Route path="/lab-test/:category" element={<LabTestList />} /> */}
+          <Route path="/lab-test/:category" element={<LabTestList />} />
           <Route path="/:category/:testName" element={<LabTestPage />} />
+          <Route path="/help-center" element={<HelpCenter />} />
+
+
+
+          <Route path="/:category" element={<LabTestList />} />
 
           <Route path="/lab-test/:category/slot" element={<SlotBooking />} />
           <Route path="/PReview" element={<PReview />} />
@@ -58,7 +64,7 @@ function App() {
           {/* <Route path="/track-order/:orderId" element={<TrackOrder />} /> */}
           <Route path="/track-order" element={<TrackOrder />} />
           <Route path="/productcart" element={<ProductCart />} />
-          <Route path="/doctorconsultancy" element={<DoctorConsultancy/>}/>
+          <Route path="/doctorconsultancy" element={<DoctorConsultancy />} />
           {/* <Route path="/order/:orderId" element={<OrderDetails />} /> */}
           <Route path="/order" element={<OrderDetails />} />
 

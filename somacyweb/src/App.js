@@ -2,28 +2,75 @@ import "./App.css";
 
 import Footer from "./Component/Footer";
 import Header from "./Component/Header";
-import RghsInfo from "./pages/RghsInfo";
-import Homepage from "./pages/homepage";
+import Homepage from "./pages/Homepage";
 import CartPage from "./pages/Cart";
 import { Route, Routes } from "react-router-dom";
 import MyOrder from "./pages/MyOrder";
 import MedicineComparison from "./pages/MedicineComaprison";
 import NotFound from "./pages/NotFound";
+import LabTestScreen from "./pages/LabTestScreen";
+import LabTestList from "./pages/LabTestList";
+import LabTestPage from "./pages/LabTestPage";
+import SlotBooking from "./pages/SlotBooking";
+import UploadRghs from "./pages/UploadRghs";
+import PReview from "./pages/PReview";
+import ProductCart from "./pages/ProductCart";
+import BookingConfirmed from "./pages/BookingConfirmed";
+import CheckoutPage from "./pages/CheckoutPage";
+import OrderSuccess from "./pages/OrderSuccess";
+import OrderConfirmed from "./pages/OrderConfirmed";
+import TrackOrder from "./pages/TrackOrder";
+import DoctorConsultancy from "./pages/DoctorConsultancy";
+import OrderDetails from "./pages/OrderDetails";
+import DoctorProfile from "./pages/DoctorProfile";
+import ViewSchedule from "./pages/ViewSchedule";
+
+import HelpCenter from "./pages/HelpCenter";
 
 function App() {
   return (
     // <div className="min-h-screen flex flex-col">
-    <div className="h-full flex flex-col items-center justify-center bg-slate-50 relative overflow-hidden">
+    <div className="min-h-screen flex flex-col bg-slate-50 relative overflow-hidden w-full">
       <Header />
 
-      <main className="flex-grow">
+      <main className="flex-grow w-full">
         {/* <main className="flex-grow flex"> */}
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/cart" element={<CartPage />} />
           <Route path="/myorder" element={<MyOrder />} />
-          <Route path="/lab-test" element={<RghsInfo />} />
+          <Route path="/lab-test" element={<LabTestScreen />} />
           <Route path="/medicine-search" element={<MedicineComparison />} />
+          <Route path="/UploadRghs" element={<UploadRghs />} />
+          <Route path="/lab-test/:category" element={<LabTestList />} />
+          <Route path="/:category/:testName" element={<LabTestPage />} />
+          <Route path="/help-center" element={<HelpCenter />} />
+
+
+
+          <Route path="/:category" element={<LabTestList />} />
+
+          <Route path="/lab-test/:category/slot" element={<SlotBooking />} />
+          <Route path="/PReview" element={<PReview />} />
+          <Route path="/drugs/:medicineName" element={<ProductCart />} />
+          <Route
+            path="/lab-test/:category/confirmed"
+            element={<BookingConfirmed />}
+          />
+          <Route path="/Prescription-Review" element={<PReview />} />
+          <Route path="/checkout" element={<CheckoutPage />} />
+          {/* <Route path="/order-success/:orderId" element={<OrderSuccess />} /> */}
+          {/* <Route path="/order-success" element={<OrderSuccess />} /> */}
+          {/* <Route path="/order-confirmed/:orderId" element={<OrderConfirmed />} /> */}
+          <Route path="/order-confirmed" element={<OrderConfirmed />} />
+          {/* <Route path="/track-order/:orderId" element={<TrackOrder />} /> */}
+          <Route path="/track-order" element={<TrackOrder />} />
+          <Route path="/productcart" element={<ProductCart />} />
+          <Route path="/doctorconsultancy" element={<DoctorConsultancy />} />
+          {/* <Route path="/order/:orderId" element={<OrderDetails />} /> */}
+          <Route path="/order" element={<OrderDetails />} />
+          <Route path="/doctor-profile" element={<DoctorProfile />} />
+          <Route path="/doctor-schedule" element={<ViewSchedule />} />
 
           <Route path="*" element={<NotFound />} />
         </Routes>

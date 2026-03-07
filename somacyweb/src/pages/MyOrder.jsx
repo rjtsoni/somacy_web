@@ -1,11 +1,13 @@
 import { Search, Truck } from "lucide-react";
 import Pagination from "../Component/Pagination";
 import { useState } from "react";
+import HelpDesk from "../Component/HelpDesk";
+import { useNavigate } from "react-router-dom";
 
 const MyOrder = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [orderType, setOrderType] = useState("All");
-
+  const navigate = useNavigate();
   const itemsPerPage = 4;
 
   const orders = Array.from({ length: 22 }, (_, i) => ({
@@ -143,15 +145,21 @@ const MyOrder = () => {
 
                     <div className="border-t mt-6 pt-4 flex justify-between items-center">
                       <div className="flex gap-6 text-sm text-gray-600">
-                        <span className="cursor-pointer hover:text-blue-600">
+                        <span
+                          onClick={() => navigate("/order")}
+                          className="cursor-pointer hover:text-blue-600"
+                        >
                           View Details
                         </span>
-                        <span className="cursor-pointer hover:text-blue-600">
+                        {/* <span className="cursor-pointer hover:text-blue-600">
                           Help
-                        </span>
+                        </span> */}
                       </div>
 
-                      <button className="bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700 transition">
+                      <button
+                        onClick={() => navigate("/track-order")}
+                        className="bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700 transition"
+                      >
                         Track Order
                       </button>
                     </div>
@@ -161,7 +169,7 @@ const MyOrder = () => {
             ))}
           </div>
 
-          <div className="bg-blue-50 p-6 rounded-2xl border border-blue-100 h-fit">
+          {/* <div className="bg-blue-50 p-6 rounded-2xl border border-blue-100 h-fit">
             <h4 className="font-semibold text-blue-700 mb-2">
               Need Assistance?
             </h4>
@@ -173,7 +181,8 @@ const MyOrder = () => {
             <button className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition">
               Chat Now
             </button>
-          </div>
+          </div> */}
+          <HelpDesk />
         </div>
 
         <Pagination

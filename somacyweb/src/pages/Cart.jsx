@@ -9,6 +9,7 @@ import {
   Pill,
   Microscope,
 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const CartItem = ({
   title,
@@ -62,6 +63,7 @@ const CartItem = ({
 };
 
 export default function CartPage() {
+  const navigate = useNavigate();
   return (
     <div className="w-full min-h-screen bg-gray-50">
       <div className="max-w-7xl w-full mx-auto px-4 py-8 text-left">
@@ -178,7 +180,10 @@ export default function CartPage() {
               </div>
 
               {/* Button */}
-              <button className="w-full mt-6 bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl font-medium shadow-md transition">
+              <button
+                onClick={() => navigate("/checkout")}
+                className="w-full mt-6 bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl font-medium shadow-md transition"
+              >
                 Proceed to Checkout
               </button>
 

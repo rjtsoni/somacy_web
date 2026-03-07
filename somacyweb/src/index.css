@@ -2,4 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+.react-calendar {
+  border: none !important;
+  width: 100%;
+  font-family: inherit;
+}
 
+.react-calendar__navigation button {
+  background: none;
+}
+
+.react-calendar__tile--active {
+  background: #2563eb !important;
+  color: white !important;
+  border-radius: 8px;
+}
+
+.react-calendar__tile:hover {
+  background: #eff6ff;
+}

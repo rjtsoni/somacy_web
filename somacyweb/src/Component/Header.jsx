@@ -1,16 +1,18 @@
-import { ShoppingCart, Shield, Search } from "lucide-react";
+import { ShoppingCart, Search, Menu, X } from "lucide-react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import logo from "../Assets/logo.png"
-
+import logo from "../Assets/logo.png";
 
 const Header = () => {
   const [mode, setMode] = useState("RGHS");
   const [activeTab, setActiveTab] = useState("Medicines");
+  const [menuOpen, setMenuOpen] = useState(false);
+
   const navigate = useNavigate();
 
   const handleClick = (tab) => {
     setActiveTab(tab);
+    setMenuOpen(false);
 
     switch (tab) {
       case "Medicines":
@@ -51,51 +53,41 @@ const Header = () => {
   };
 
   return (
-    <header className="w-full bg-[#f5f7fa] border-b border-gray-200 px-8 py-3 flex items-center">
-      {/* Logo */}
+    <>
+      <header className="w-full bg-[#f5f7fa] border-b border-gray-200 px-6 py-3 flex items-center gap-6 flex-nowrap">
 
-      <div className="flex items-center gap-3">
-        <img
-          src={logo}
-          alt="Somacy Logo"
-          className="w-9 h-9 object-contain"
-        />
-        <div className="leading-tight">
-          <h1 className="text-base font-bold text-blue-600">Somacy</h1>
-          <p className="text-[10px] text-gray-400 tracking-wider">
-            PREMIUM CARE
-          </p>
+        {/* Logo */}
+        <div className="flex items-center gap-3 shrink-0">
+          <img src={logo} alt="Somacy Logo" className="w-9 h-9 object-contain" />
+          <div className="leading-tight">
+            <h1 className="text-base font-bold text-blue-600">Somacy</h1>
+            <p className="text-[10px] text-gray-400 tracking-wider">
+              PREMIUM CARE
+            </p>
+          </div>
         </div>
-      </div>
-      <div
-        className="flex items-center gap-3 cursor-pointer"
-        onClick={() => handleClick("Medicines")}
-      >
-      </div>
 
-      {/* Search */}
-      <div className="ml-10 w-[460px]">
-        <div className="bg-gray-200 rounded-full px-4 py-1.5 flex items-center">
-          <Search className="w-4 h-4 m-2 text-gray-500" />
-          <input
-            type="text"
-            placeholder="Search RGHS medicines, specialists, or lab tests"
-            className="bg-transparent outline-none w-full text-sm placeholder:text-gray-500"
-          />
+        {/* Search */}
+        <div className="flex-1 max-w-[500px] hidden sm:block">
+          <div className="bg-gray-200 rounded-full px-4 py-1.5 flex items-center">
+            <Search className="w-4 h-4 mr-2 text-gray-500" />
+            <input
+              type="text"
+              placeholder="Search RGHS medicines, specialists, or lab tests"
+              className="bg-transparent outline-none w-full text-sm"
+            />
+          </div>
         </div>
-      </div>
 
-      {/* Right Section */}
-      <div className="flex items-center gap-8 ml-auto">
         {/* Mode Switch */}
-        <div className="flex items-center bg-gray-200 rounded-full p-1 text-sm">
-          <p className="px-2 text-sm text-gray-600 font-medium">
+        <div className="flex items-center bg-gray-200 rounded-full p-1 text-sm shrink-0">
+          <p className="px-2 text-gray-600 font-medium hidden sm:block">
             Switch Mode :
           </p>
 
           <button
             onClick={() => setMode("RGHS")}
-            className={`px-3 py-1 rounded-full transition ${mode === "RGHS" ? "bg-blue-600 text-white" : "text-gray-600"
+            className={`px-3 py-1 rounded-full ${mode === "RGHS" ? "bg-blue-600 text-white" : "text-gray-600"
               }`}
           >
             RGHS
@@ -103,68 +95,27 @@ const Header = () => {
 
           <button
             onClick={() => setMode("Retail")}
-            className={`px-3 py-1 rounded-full transition ${mode === "Retail" ? "bg-blue-600 text-white" : "text-gray-600"
+            className={`px-3 py-1 rounded-full ${mode === "Retail" ? "bg-blue-600 text-white" : "text-gray-600"
               }`}
           >
             Retail
           </button>
         </div>
 
-        {/* Navigation Tabs */}
-        <div className="hidden md:flex items-center gap-6 text-sm">
-          <button
-            onClick={() => handleClick("Medicines")}
-            className={`font-medium ${activeTab === "Medicines"
-              ? "text-blue-600 border-b-2 border-blue-600 pb-1"
-              : "text-gray-600"
-              }`}
-          >
-            Medicines
-          </button>
-
-          <button
-            onClick={() => handleClick("Lab Tests")}
-            className={`font-medium ${activeTab === "Lab Tests"
-              ? "text-blue-600 border-b-2 border-blue-600 pb-1"
-              : "text-gray-600"
-              }`}
-          >
-            Lab Tests
-          </button>
-          <button
-            onClick={() => handleClick("HelpCenter")}
-            className={`font-medium ${activeTab === "HelpCenter"
-              ? "text-blue-600 border-b-2 border-blue-600 pb-1"
-              : "text-gray-600"
-              }`}
-          >
-            Help Center
-          </button>
-
-          <button
-            onClick={() => handleClick("MyOrder")}
-            className={`font-medium ${activeTab === "MyOrder"
-              ? "text-blue-600 border-b-2 border-blue-600 pb-1"
-              : "text-gray-600"
-              }`}
-          >
-            MyOrder
-          </button>
-
-          <button
-            onClick={() => handleClick("DoctorConsultancy")}
-            className={`font-medium ${activeTab === "DoctorConsultancy"
-              ? "text-blue-600 border-b-2 border-blue-600 pb-1"
-              : "text-gray-600"
-              }`}
-          >
+        {/* Navigation (Desktop Only) */}
+        <div className="hidden min-[1115px]:flex items-center gap-5 text-sm whitespace-nowrap shrink-0">
+          <button onClick={() => handleClick("Medicines")}>Medicines</button>
+          <button onClick={() => handleClick("Lab Tests")}>Lab Tests</button>
+          <button onClick={() => handleClick("HelpCenter")}>Help Center</button>
+          <button onClick={() => handleClick("MyOrder")}>MyOrder</button>
+          <button onClick={() => handleClick("DoctorConsultancy")}>
             Doctor's Consultancy
           </button>
         </div>
 
         {/* Cart */}
         <div
-          className="relative cursor-pointer"
+          className="relative cursor-pointer shrink-0"
           onClick={() => handleClick("Cart")}
         >
           <ShoppingCart className="w-5 h-5 text-gray-700" />
@@ -173,15 +124,42 @@ const Header = () => {
           </span>
         </div>
 
+        {/* Mobile Menu Button */}
+        <div className="min-[1115px]:hidden cursor-pointer shrink-0"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          {menuOpen ? <X size={24} /> : <Menu size={24} />}
+        </div>
+
         {/* Sign In */}
         <button
           onClick={() => handleClick("Signup")}
-          className="bg-blue-600 hover:bg-blue-700 text-white text-sm px-4 py-1.5 rounded-full transition"
+          className="bg-blue-600 hover:bg-blue-700 text-white text-sm px-4 py-1.5 rounded-full shrink-0 hidden min-[1115px]:block"
         >
           Sign In
         </button>
-      </div>
-    </header>
+      </header>
+
+      {/* Mobile Menu */}
+      {menuOpen && (
+        <div className="min-[1115px]:hidden bg-[#f5f7fa] border-b border-gray-200 px-6 py-4 flex flex-col gap-4 text-sm">
+          <button onClick={() => handleClick("Medicines")}>Medicines</button>
+          <button onClick={() => handleClick("Lab Tests")}>Lab Tests</button>
+          <button onClick={() => handleClick("HelpCenter")}>Help Center</button>
+          <button onClick={() => handleClick("MyOrder")}>MyOrder</button>
+          <button onClick={() => handleClick("DoctorConsultancy")}>
+            Doctor's Consultancy
+          </button>
+
+          <button
+            onClick={() => handleClick("Signup")}
+            className="bg-blue-600 text-white py-2 rounded-full"
+          >
+            Sign In
+          </button>
+        </div>
+      )}
+    </>
   );
 };
 

@@ -197,9 +197,9 @@ export default function LabTestList() {
       </div>
 
       {/* Content */}
-      <div className="px-6 pt-8 text-center">
+      <div className="px-6 pt-8 ">
         {/* Breadcrumb */}
-        <div className="flex justify-center items-center gap-2 text-xs text-gray-400 mb-8 uppercase">
+        <div className="flex justify-center items-center gap-2 text-xs text-gray-400 mb-4 uppercase">
           <span onClick={() => navigate("/")} className="cursor-pointer">
             Home
           </span>
@@ -209,8 +209,8 @@ export default function LabTestList() {
 
         {config.component}
 
-        <div className="mt-12">
-          <h1 className="text-3xl font-extrabold mb-8">
+        <div >
+          <h1 className="text-3xl font-extrabold mb-4">
             {displayName} {config.listLabel}
           </h1>
 

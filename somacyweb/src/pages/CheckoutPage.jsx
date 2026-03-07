@@ -19,7 +19,7 @@ export default function CheckoutPage() {
 
   return (
     <div className="bg-gray-50  p-6">
-      <div className="max-w-7xl mx-auto grid lg:grid-cols-3 gap-6">
+      <div className="max-w-full mx-auto grid lg:grid-cols-3 gap-6">
         {/* LEFT SIDE */}
 
         <div className="lg:col-span-2 space-y-6">
@@ -53,11 +53,10 @@ export default function CheckoutPage() {
                 <label
                   key={addr.id}
                   className={`flex items-start gap-3 border rounded-xl p-4 cursor-pointer transition
-        ${
-          selectedAddress === addr.id
-            ? "border-blue-600 bg-blue-50"
-            : "hover:border-gray-300"
-        }`}
+        ${selectedAddress === addr.id
+                      ? "border-blue-600 bg-blue-50"
+                      : "hover:border-gray-300"
+                    }`}
                 >
                   <input
                     type="radio"

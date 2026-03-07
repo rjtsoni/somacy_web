@@ -23,7 +23,7 @@ export default function SlotBooking() {
 
   return (
     <div className="bg-gray-50 min-h-screen py-10">
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-full mx-auto px-6">
         {/* STEP BAR */}
         <div className="flex items-center justify-between mb-10">
           <div className="flex items-center w-full">
